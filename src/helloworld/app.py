@@ -11,7 +11,7 @@ class HelloWorld(toga.App):
     def startup(self):
         self.main_box = toga.Box(style=Pack(direction=COLUMN))
 
-        self.path = os.path.dirname(os.path.abspath(__file__))+"/resources/edt/"
+        self.path = os.path.dirname(os.path.abspath(__file__)) + "/resources/edt/"
         self.edt_list = os.listdir(self.path)
         print("path", self.edt_list)
         self.index = 0

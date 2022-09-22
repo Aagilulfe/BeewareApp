@@ -19,7 +19,7 @@ student_UE3_2 = "ECOA130g"
 DRIVER_PATH = 'chromedriver'
 
 options = Options()
-options.headless = False    # flag to decide if the page is displayed (False) or not (True)
+options.headless = True    # flag to decide if the page is displayed (False) or not (True)
 options.add_argument("--window-size=1920,1200")
 # options.add_argument("--window-size=970,600") #bad dimensions
 
@@ -50,7 +50,7 @@ except TimeoutException:
     print("Loading of table took too much time!")
 
 edt = driver.find_element(By.ID, "GInterface.Instances[1].Instances[7]")
-edt.screenshot(student_language + student_level + "_edt.png")
+edt.screenshot("resources/edt/" + student_language + student_level + "_edt.png")
 print("=> Main planning saved")
 
 #SWITCH TO "MATIERES" SECTION
@@ -78,7 +78,7 @@ except TimeoutException:
     print("Loading of first UE3 took too much time!")
 edt_ue3_1 = driver.find_element(By.ID, "GInterface.Instances[1].Instances[7]")
 time.sleep(0.5)
-edt_ue3_1.screenshot(student_UE3_1 + "_edt.png")
+edt_ue3_1.screenshot("resources/edt/" + student_UE3_1 + "_edt.png")
 print("=> First UE3 planning saved")
 
 #SECOND UE3
@@ -92,7 +92,7 @@ except TimeoutException:
     print("Loading of second UE3 took too much time!")
 edt_ue3_2 = driver.find_element(By.ID, "GInterface.Instances[1].Instances[7]")
 time.sleep(0.5)
-edt_ue3_2.screenshot(student_UE3_2 + "_edt.png")
+edt_ue3_2.screenshot("resources/edt/" + student_UE3_2 + "_edt.png")
 print("=> Second UE3 planning saved")
 
 
