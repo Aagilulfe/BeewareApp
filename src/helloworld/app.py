@@ -5,7 +5,7 @@ import toga
 from toga.style import Pack
 from toga.style.pack import COLUMN, ROW
 import os
-
+from helloworld.scrapper import scrapper
 
 class HelloWorld(toga.App):
     def startup(self):
@@ -13,6 +13,10 @@ class HelloWorld(toga.App):
 
         self.path = os.path.dirname(os.path.abspath(__file__)) + "/resources/edt/"
         self.edt_list = os.listdir(self.path)
+        if self.edt_list == []:
+            scrapper()
+        self.edt_list = os.listdir(self.path)
+        assert self.edt_list != []
         print("path", self.edt_list)
         self.index = 0
 
@@ -37,6 +41,9 @@ class HelloWorld(toga.App):
         self.main_window = toga.MainWindow(title=self.formal_name)
         self.main_window.content = self.main_box
         self.main_window.show()
+
+    def edit_options(self):
+        pass
 
     def switch_planning(self, widget):
         self.index = (self.index + 1) % len(self.edt_list)
