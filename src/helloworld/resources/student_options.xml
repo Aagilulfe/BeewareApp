@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<!-- This xml file contains the student's options -->
+<student>
+    <language>Roumain</language>
+    <level>L1</level>
+    <UE3_1>ECOA130d</UE3_1>
+    <UE3_2>ECOA130g</UE3_2>
+</student>
